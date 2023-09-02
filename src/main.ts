@@ -22,6 +22,8 @@ await new Command()
   
     await Deno.mkdir(outputDirectoryPath, {recursive: true});
     
+    // await Deno.writeTextFile(outputDirectoryPath + "/backup.json", JSON.stringify(backupFile, null, 2));
+
     for (const entry of backupFile.entries) {
       await writeEntryFiles(entry, outputDirectoryPath);
     }
