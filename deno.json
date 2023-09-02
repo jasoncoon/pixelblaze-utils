@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "compile:linux": "deno compile --target=x86_64-unknown-linux-gnu --lock=deno.lock --output bin/linux_x86_64/pixelblaze --allow-write --allow-read ./src/main.ts",
+    "compile:win": "deno compile --target=x86_64-pc-windows-msvc --lock=deno.lock --output bin/windows_x86_64/pixelblaze --allow-write --allow-read ./src/main.ts",
+    "compile:mac_x86_64": "deno compile --target=x86_64-apple-darwin --lock=deno.lock --output bin/mac_x86_64/pixelblaze --allow-write --allow-read ./src/main.ts",
+    "compile:mac_arm64": "deno compile --target=aarch64-apple-darwin --lock=deno.lock --output bin/mac_arm_64/pixelblaze --allow-write --allow-read ./src/main.ts",
+    "compile": "deno task compile:linux && deno task compile:win && deno task compile:mac_x86_64 && deno task compile:mac_arm64",
+    "run": "deno run --allow-read --allow-write ./src/main.ts",
+    "watch": "deno run --watch --allow-read --allow-write ./src/main.ts"
+  }
+}
